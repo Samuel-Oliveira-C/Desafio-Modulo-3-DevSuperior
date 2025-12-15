@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import com.desafio.devSuperior.model.dto.ClientDTO;
 import com.desafio.devSuperior.repository.ClientRepository;
 
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ClientService {
@@ -15,7 +15,7 @@ public class ClientService {
         this.repository = repository;
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public ClientDTO findById(Long id) {
         return new ClientDTO(repository.findById(id).get());}
 }
