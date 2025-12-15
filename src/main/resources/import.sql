@@ -1,0 +1,15 @@
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (1, 'Carlos Silva', '99988877766', 3500.50, '1988-03-15', 2);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (2, 'Ana Oliveira', '11122233344', 5800.00, '1995-11-28', 1);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (3, 'Roberto Almeida', '55566677788', 8250.75, '1976-05-10', 3);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (4, 'Juliana Costa', '22233344455', 4100.00, '2001-08-03', 0);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (5, 'Erica Santos', '00011122233', 12000.00, '1965-09-22', 0);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (6, 'Felipe Souza', '66677788899', 6750.90, '1992-01-19', 1);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (7, 'Marcia Lima', '33344455566', 2900.00, '1980-12-05', 4);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (8, 'Guilherme Pereira', '77788899900', 9500.25, '1970-07-30', 2);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (9, 'Patricia Rocha', '44455566677', 5300.60, '1998-04-12', 0);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (10, 'Thiago Mendes', '88899900011', 11000.00, '1960-06-25', 5);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (11, 'Vanessa Torres', '12345678901', 3800.00, '1985-02-14', 1);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (12, 'André Ribeiro', '23456789012', 7200.50, '1990-10-20', 3);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (13, 'Clara Barbosa', '34567890123', 4500.99, '1978-09-08', 0);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (14, 'Paulo Martins', '45678901234', 6100.00, '1983-01-27', 2);
+INSERT INTO tb_client (id, name, cpf, income, birth_date, children) VALUES (15, 'Diana Nogueira', '56789012345', 15000.00, '1969-03-01', 1);
