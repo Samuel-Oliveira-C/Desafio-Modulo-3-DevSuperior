@@ -10,6 +10,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -30,6 +33,11 @@ public class ClientController {
     @GetMapping
     public Page<ClientDTO> findAllBySorting(Pageable list){
         return service.findAllBySorting(list);
+    }
+    
+    @PostMapping
+    public ClientDTO saveEntity (@RequestBody ClientDTO dto){
+        return service.saveEntity(dto);
     }
     
 }

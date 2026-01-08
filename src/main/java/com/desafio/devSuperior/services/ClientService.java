@@ -30,4 +30,15 @@ public class ClientService {
         Page<Client> result = repository.findAll(listPageable);
         return result.map(x -> new ClientDTO(x));
     }
+
+    @Transactional
+    public ClientDTO saveEntity(ClientDTO dto){
+        Client entity = new Client();
+        entity.setName(dto.name());
+        entity.setCpf(dto.cpf());
+        entity.setIncome(dto.income());
+        entity.setBirthDate(dto.birthDate());
+        entity.setChildren(dto.children());
+        return new ClientDTO(repository.save(entity));
+    }
 }
