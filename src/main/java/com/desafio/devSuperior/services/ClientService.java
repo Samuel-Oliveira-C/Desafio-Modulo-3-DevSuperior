@@ -34,11 +34,29 @@ public class ClientService {
     @Transactional
     public ClientDTO saveEntity(ClientDTO dto){
         Client entity = new Client();
+        copyEntityToDto(entity, dto);
+        return new ClientDTO(repository.save(entity));
+    }
+
+    @Transactional
+    public ClientDTO updateEntity(Long id, ClientDTO dto){
+        Client entity = repository.getReferenceById(id);
+        copyEntityToDto(entity, dto);
+        entity = repository.save(entity);
+        return new ClientDTO(entity);
+    }
+
+    @Transactional
+    public void deleteEntity(Long id){
+        repository.deleteById(id);
+    }
+
+    public ClientDTO copyEntityToDto(Client entity, ClientDTO dto){
         entity.setName(dto.name());
         entity.setCpf(dto.cpf());
         entity.setIncome(dto.income());
         entity.setBirthDate(dto.birthDate());
         entity.setChildren(dto.children());
-        return new ClientDTO(repository.save(entity));
+        return new ClientDTO(entity);
     }
 }
