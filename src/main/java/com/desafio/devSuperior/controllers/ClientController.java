@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.desafio.devSuperior.model.dto.ClientDTO;
 import com.desafio.devSuperior.services.ClientService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,19 +41,18 @@ public class ClientController {
     }
     
     @PostMapping
-    public ClientDTO saveEntity (@RequestBody ClientDTO dto){
+    public ClientDTO saveEntity (@Valid @RequestBody ClientDTO dto){
         return service.saveEntity(dto);
     }
     
     @PutMapping("/{id}")
-    public String update(@PathVariable Long id, @RequestBody ClientDTO dto) {
+    public String update(@Valid @PathVariable Long id, @RequestBody ClientDTO dto) {
         service.updateEntity(id, dto);
         return "Client atualizado com sucesso!";
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable Long id){
+    public void delete(@PathVariable Long id){
         service.deleteEntity(id);
-        return "Client deletado com sucesso!";
     }
 }

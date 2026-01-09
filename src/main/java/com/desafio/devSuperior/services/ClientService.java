@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.desafio.devSuperior.model.dto.ClientDTO;
 import com.desafio.devSuperior.model.entity.Client;
 import com.desafio.devSuperior.repository.ClientRepository;
+import com.desafio.devSuperior.services.exceptions.ResourceNotFound;
 
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,15 +41,24 @@ public class ClientService {
 
     @Transactional
     public ClientDTO updateEntity(Long id, ClientDTO dto){
+        if(!repository.existsById(id)){
+            throw new ResourceNotFound("Recurso não encontrado.");
+        }
+        else{
         Client entity = repository.getReferenceById(id);
         copyEntityToDto(entity, dto);
         entity = repository.save(entity);
         return new ClientDTO(entity);
+        }
     }
 
     @Transactional
     public void deleteEntity(Long id){
-        repository.deleteById(id);
+        if(!repository.existsById(id)){
+            throw new ResourceNotFound("Recurso não encontrado.");
+        }else{
+            repository.deleteById(id);
+        }
     }
 
     public ClientDTO copyEntityToDto(Client entity, ClientDTO dto){
